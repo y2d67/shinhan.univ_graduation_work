@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>계정 관리 페이지</title>
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="acount.css" />
+	<style>
+
+	</style>
+</head>
+
+<body>
+	<nav>
+		<div class="container">
+			<ul>
+				<img class="img1" src="신한대학교ui.jpg" />
+			</ul>
+			<ul id="ul1">
+
+				<li><a href="#">미리보기</a></li>
+				<li><a href="#">게시글 관리</a></li>
+				<li> <a href="#">배너설정<i class='fa fa-angle-down'></i></a>
+					<ul>
+						<li><a href="#">상단 배너 설정</a></li>
+						<li><a href="#">3줄 요약 설정</a></li>
+						<li><a href="#">노승찬 </a></li>
+					</ul>
+				</li>
+				<li class='sub-menu'> <a href="#">계정관리<i class='fa fa-angle-down'></i></a>
+					<ul>
+						<li><a href="#">1</a></li>
+						<li><a href="#">Service Two</a></li>
+						<li><a href="#">Service Three</a></li>
+						<li><a href="#">Service Four</a></li>
+						<li><a href="#">Service Five</a></li>
+						<li><a href="#">Service Six</a></li>
+					</ul>
+				</li>
+				<li><a href="#">챗봇관리</a></li>
+			</ul>
+		</div>
+	</nav>
+
+
+	<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script>
+		$('nav li').hover(
+			function () {
+				$('ul', this).stop().slideDown(200);
+			},
+			function () {
+				$('ul', this).stop().slideUp(200);
+			}
+		);
+	</script>
+
+	<div class="div_0">
+		<div class="div_1">
+
+			<section class="sec_1">
+				section1입니다.
+
+			</section>
+
+			<section class="sec_2">
+				section2입니다.
+			</section>
+
+			<section class="sec_3">
+				<p>section3입니다.</p>
+				<p>section3입니다.</p>
+				<p>section3입니다.</p>
+				<p>section3입니다.</p>
+				<p>section3입니다.</p>
+				<p>section3입니다.</p>
+				<p>section3입니다.</p>
+				<p>section3입니다.</p>
+				<p>section3입니다.</p>
+
+			</section>
+
+			<section class="sec_4">
+				<button type="button" onclick="" class="add_btn">추가</button>
+				<button type="button" onclick="alert('클릭-1 사용')" class="sub_btn">삭제</button>
+
+			</section>
+		</div>
+
+
+
+	</div>
+
+
+
+</body>
+
+</html>

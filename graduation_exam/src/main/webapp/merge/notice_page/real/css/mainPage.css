@@ -1,0 +1,175 @@
+@charset "UTF-8";
+
+    /* 기본 스타일 */
+    .navbar {
+        background-color: cornflowerblue;
+        width: 100%;
+        height: 70px;
+        position: relative;
+    }
+
+    #logo {
+        width: 160px;
+        height: 50px;
+        position: absolute;
+        left: 20px;
+        top: 10px;
+    }
+
+    #login_img {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    
+    #edit_img {
+    	width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 20px;
+        right: 80px;
+    }
+    
+
+    .software {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        color: rgb(0, 0, 0);
+        font-size: 24px;
+    }
+
+    .loginname {
+        position: absolute;
+        top: 25px;
+        right: 150px;
+    }
+    
+    .loginname1 {
+        position: absolute;
+        top: 25px;
+        right: 80px;
+    }
+
+    /* 인스타그램 섹션 */
+    .insta {
+        margin-top: 30px;
+        position: absolute;
+        border: 1px solid black;
+        width: 600px;
+        height: 400px;
+        left: 30px;
+    }
+     .carousel-inner img {
+    width: 600px;
+    height: 450px;
+  }
+
+    /* Notice Button 섹션 */
+    .noticebutton {
+        margin-top:30px;
+        position: absolute;
+        border: 1px solid black;
+        width: 600px;
+        height: 220px;
+        right: 30px;
+    }
+    
+    .button-group {
+    	margin-top:20px;
+    }
+    
+    .noticebutton button {
+    	width: 100px;
+    	height: 40px;
+    }
+
+
+    /* Three Notice 섹션 */
+    .threenotice {
+        margin-top: 260px;
+        position: absolute;
+        border: 1px solid black;
+        width: 600px;
+        height: 220px;
+        right: 30px;
+    }
+    
+    .threenotice h4 {
+    	margin-left:20px;
+    }
+    
+    #botti {
+    	margin: 20px;
+    }
+    
+    
+
+	/* 미디어 쿼리: 화면 너비가 860px 이하일 때 */
+    @media screen and (max-width: 860px) {
+        .loginname {
+            display: none; /* 로그인 이름 숨기기 */
+        }
+        .loginname1 {
+            display: none; /* 로그인 이름 숨기기 */
+        }
+        #edit_img {
+        	display:none;
+        }
+
+    }
+
+
+    /* 미디어 쿼리: 화면 너비가 750px 이하일 때 */
+    @media screen and (max-width: 750px) {
+        .loginname {
+            display: none; /* 로그인 이름 숨기기 */
+        }
+
+        /* 각 섹션을 화면 중앙에 배치 */
+        .insta, .noticebutton, .threenotice {
+        	position:static;
+            width: 100%;
+            left: 0;
+            margin-top: 15px;
+        }
+    }
+
+
+/* 미디어 쿼리: 화면 너비가 1270px 이하일 때 */
+    @media screen and (max-width: 1270px) {
+       
+        .insta, .noticebutton, .threenotice {
+            position: static;
+        }
+        
+        
+        
+        .threenotice {
+        margin-top: 30px;
+        }
+    }
+    /* 미디어 쿼리: 화면 너비가 600px 이하일 때 */
+    @media screen and (max-width: 600px) {
+        #login_img {
+            transform: translateX(0%);
+        }
+
+        .software {
+            transform: translateX(-20%);
+        }
+        .insta, .noticebutton, .threenotice {
+            position: static;
+        }
+    }
+
+    /* Flexbox를 사용하여 div 요소들을 아래로 정렬 */
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px; /* div 요소 사이의 간격 설정 */
+        margin-top: 15px;
+    }
+

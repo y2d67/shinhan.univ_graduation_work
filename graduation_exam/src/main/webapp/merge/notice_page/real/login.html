@@ -1,0 +1,30 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>로그인</title>
+	<link type="text/css" rel="stylesheet" href="css/login.css" />
+	
+</head>
+
+<body>
+	<div class="wrap">
+		<div class="form-wrap">
+			<div class="button-wrap">
+				<div id="btn"><p class="togglebtn">소프트웨어융합학과</p></div>
+				<button type="button" class="togglebtn">&nbsp;</button>
+			</div>
+			
+			<form id="login" method="POST" accept-charset="utf-8" action="login_process.jsp" class="input-group">
+				<input type="text" class="input-field" name="oname" placeholder="이름" required>
+				<input type="text" class="input-field" name="inid" placeholder="아이디" required>
+				<input type="password" class="input-field" name="inpwd" placeholder="비밀번호" required>
+				<div class="checkbox"></div>
+				<button class="submit">로그인</button>
+			</form>
+		</div>
+	</div>
+
+</body>
+
+</html>
