@@ -110,8 +110,8 @@
 
                 try {
                     // 오라클 데이터베이스 연결
-                    Class.forName("oracle.jdbc.driver.OracleDriver");
-                    connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "test", "12345");
+                    Class.forName("org.mariadb.jdbc.Driver");
+                    connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/test", "user1", "tmdcks15");
 
                     // 게시물 조회
                     String query = "SELECT post_id, title, author, ctime, grade2 FROM jdbc_test WHERE grade2 = '2학년' ORDER BY post_id DESC";

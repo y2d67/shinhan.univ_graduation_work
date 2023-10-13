@@ -12,8 +12,8 @@
     Connection conn = null;
     PreparedStatement pstmt = null;
     
-    String jdbc_driver = "oracle.jdbc.driver.OracleDriver";
-    String jdbc_url = "jdbc:oracle:thin:@localhost:1521:xe";
+    String jdbc_driver = "org.mariadb.jdbc.Driver"; // MariaDB JDBC 드라이버
+    String jdbc_url = "jdbc:mariadb://localhost:3306/test"; // MariaDB 연결 URL
     int postId = Integer.parseInt(request.getParameter("post_id"));
     String title = request.getParameter("new_title");
     String contents = request.getParameter("new_contents");
@@ -29,13 +29,9 @@
         Class.forName(jdbc_driver);
         
         // 데이터베이스 연결
-        conn = DriverManager.getConnection(jdbc_url, "test", "12345"); // 사용자명과 비밀번호를 적절하게 변경
+        conn = DriverManager.getConnection(jdbc_url, "user1", "tmdcks15"); // 사용자명과 비밀번호를 적절하게 변경
         
         // 사용자가 입력한 수정 내용을 받아옴
-       
-        
-        
-        
         // SQL 쿼리 작성
         String sql = "UPDATE jdbc_test SET title=?, contents=?, tag=?, grade1=?, grade2=?, grade3=?, grade4=?, gradeall=? WHERE post_id=?";
         
@@ -49,23 +45,24 @@
         pstmt.setString(7, grade4);
         pstmt.setString(8, gradeall);
         pstmt.setInt(9, postId);
+        
         // 쿼리 실행
         int rowCount = pstmt.executeUpdate();
         
         if (rowCount > 0) {
-        	%>
-        	    <script>
-        	        // 게시글이 성공적으로 수정되었을 때 total_listReal.jsp로 자동 리디렉션
-        	        setTimeout(function () {
-        	            window.location.href = "total_list.jsp";
-        	        }, 0000); // 2초 후에 리디렉션
-        	    </script>
-        	<%
-        	} else {
-        	%>
-        	    <p>게시글 수정에 실패했습니다.</p>
-        	<%
-        	}
+    %>
+    <script>
+        // 게시글이 성공적으로 수정되었을 때 total_listReal.jsp로 자동 리디렉션
+        setTimeout(function () {
+            window.location.href = "total_list.jsp";
+        }, 2000); // 2초 후에 리디렉션
+    </script>
+    <%
+    } else {
+    %>
+    <p>게시글 수정에 실패했습니다.</p>
+    <%
+    }
     } catch (Exception e) {
         out.println("오류 발생: " + e.getMessage());
     } finally {

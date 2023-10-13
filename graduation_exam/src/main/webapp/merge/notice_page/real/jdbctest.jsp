@@ -7,8 +7,8 @@
    PreparedStatement pstmt = null;
    ResultSet rs = null;
    
-   String jdbc_driver = "oracle.jdbc.driver.OracleDriver";
-   String jdbc_url = "jdbc:oracle:thin:@localhost:1521:xe";
+   String jdbc_driver = "org.mariadb.jdbc.Driver";
+   String jdbc_url = "jdbc:mariadb://localhost:3306/test";
    
    String title = request.getParameter("title");
    String contents = request.getParameter("contents");
@@ -24,11 +24,11 @@
    String gradeall = request.getParameter("gradeall");
    
    try {
-      Class.forName(jdbc_driver);
-      conn = DriverManager.getConnection(jdbc_url, "test", "12345");
+	   Class.forName("org.mariadb.jdbc.Driver");
+      conn = DriverManager.getConnection(jdbc_url, "root", "12345");
 
       // 시퀀스에서 다음 post_id 값을 가져오기
-      String seqSQL = "SELECT post_id_seq.NEXTVAL FROM DUAL";
+      String seqSQL = "SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_NAME='post_id_seq'";
       pstmt = conn.prepareStatement(seqSQL);
       rs = pstmt.executeQuery();
       int post_id = 0;

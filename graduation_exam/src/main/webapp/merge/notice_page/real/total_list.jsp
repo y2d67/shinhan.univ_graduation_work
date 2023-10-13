@@ -491,17 +491,24 @@ nav .fa.fa-angle-down {
 			</section>
 			<section class="sc1">
 				<%
-                Connection connection = null;
-                PreparedStatement pstmt = null;
+// MariaDB 연결 정보 설정
+String jdbcUrl = "jdbc:mariadb://localhost:3306/test"; // 여기에 MariaDB의 호스트와 데이터베이스 이름을 설정하세요
+String dbUser = "user1"; // 사용자명
+String dbPassword = "tmdcks15"; // 비밀번호
 
-                try {
-                    // 오라클 데이터베이스 연결
-                    Class.forName("oracle.jdbc.driver.OracleDriver");
-                    connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "test", "12345");
+Connection conn = null;
+PreparedStatement pstmt = null;
+
+try {
+    // JDBC 드라이버 로드
+    Class.forName("org.mariadb.jdbc.Driver");
+    
+    // 데이터베이스 연결
+    conn = DriverManager.getConnection(jdbcUrl, dbUser, dbPassword);
 
                     // 게시물 조회
                     String query = "SELECT post_id, title, author, ctime, views FROM jdbc_test ORDER BY post_id DESC";
-                    pstmt = connection.prepareStatement(query);
+                    pstmt = conn.prepareStatement(query);
                     ResultSet resultSet = pstmt.executeQuery();
 
                     while (resultSet.next()) {
@@ -528,8 +535,8 @@ nav .fa.fa-angle-down {
                     if (pstmt != null) {
                         pstmt.close();
                     }
-                    if (connection != null) {
-                        connection.close();
+                    if (conn != null) {
+                    	conn.close();
                     }
                 }
             %>

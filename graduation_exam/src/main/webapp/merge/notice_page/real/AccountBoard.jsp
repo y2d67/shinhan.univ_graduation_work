@@ -101,10 +101,10 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
 
                 try {
                     // 데이터베이스 연결 정보
-                     String jdbc_driver = "oracle.jdbc.driver.OracleDriver"; //사용할 JDBC 드라이버의 클래스 이름
-   					String jdbc_url = "jdbc:oracle:thin:@localhost:1521:xe";
-                    String dbUser = "test";
-                    String dbPassword = "12345";
+                     String jdbc_driver = "org.mariadb.jdbc.Driver"; //사용할 JDBC 드라이버의 클래스 이름
+   					String jdbc_url = "jdbc:mariadb://localhost:3306/test";
+                    String dbUser = "user1";
+                    String dbPassword = "tmdcks15";
 
                     // JDBC 드라이버 로드
                     Class.forName(jdbc_driver);
