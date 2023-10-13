@@ -5,7 +5,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>전체 게시글 보기</title>
+<title>취창업 게시판</title>
 <link rel="stylesheet"
 	href="http://netdna.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
 <link type="text/css" rel="stylesheet" href="css/changup.css" />

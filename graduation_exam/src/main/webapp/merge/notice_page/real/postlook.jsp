@@ -380,7 +380,7 @@ h1 {
             pstmt.executeUpdate();
             
             // SQL 쿼리 작성
-            String sql = "SELECT post_id, author, title, contents, ctime, tag, grade1, grade2, grade3, grade4, gradeall, views FROM jdbc_test WHERE title = ?";
+            String sql = "SELECT post_id, author, title, contents, ctime, tag, grade1, grade2, grade3, grade4, gradeall, views, recommand FROM jdbc_test WHERE title = ?";
             
             // PreparedStatement 생성
             pstmt = conn.prepareStatement(sql);
@@ -396,6 +396,7 @@ h1 {
                 String ctime = rs.getString("ctime");
                 String tag = rs.getString("tag");
                 int views = rs.getInt("views");
+                int recommand = rs.getInt("recommand");
                 
         %>
                 <div>
@@ -410,6 +411,7 @@ h1 {
                                     <p class="post-meta-item">태그 : <%= tag %></p>
                                     <p class="post-meta-item">글번호 : <%= rs.getInt("post_id") %></p>
                                     <p class="post-meta-item">조회수 : <%= views %></p>
+                                    <p class="post-meta-item">추천 : <%= recommand %></p>
                                 </span>
                             </div>
                             <div class="post-content">

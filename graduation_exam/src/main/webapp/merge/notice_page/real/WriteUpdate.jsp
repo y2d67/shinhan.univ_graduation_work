@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>게시판 작성 페이지</title>
+    <title>게시글 수정</title>
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
     <link type="text/css" rel="stylesheet" href="css/WriteUpdate.css" />
     <!-- Bootstrap 및 Summernote CSS 및 JS 링크 추가 -->

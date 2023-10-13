@@ -5,7 +5,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>전체 게시글 보기</title>
+<title>전체 게시글</title>
 <link rel="stylesheet"
 	href="http://netdna.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
 	
